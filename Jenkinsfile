@@ -14,9 +14,9 @@ node {
 
     stage('Run http test') {
         docker.withServer('unix:///var/run/docker.sock', '') {
-            docker.image("backend:${env.BUILD_NUMBER}").withRun('-p 6000:3000') {c ->
+            docker.image("backend:${env.BUILD_NUMBER}").withRun('-p 6010:3000') {c ->
                 sleep 3
-                sh "curl http://${env.HOST_IP}:6000 &> /dev/null"
+                sh "curl http://${env.HOST_IP}:6010 &> /dev/null"
             }
          }
     }
