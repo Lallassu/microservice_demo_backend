@@ -34,7 +34,7 @@ node {
           sh "docker service update --image ${env.HOST_IP}:5000/backend:${env.BUILD_NUMBER} backend"
       } else {
           echo "Performing deploy of service."
-          sh "docker service create --replicas 2 -e HOST_IP=${env.BUILD_NUMBER} -p 6000:3000 --name backend ${env.HOST_IP}:5000/backend:${env.BUILD_NUMBER}"
+          sh "docker service create --replicas 2 -e HOST_IP=${env.HOST_IP} -p 6000:3000 --name backend ${env.HOST_IP}:5000/backend:${env.BUILD_NUMBER}"
       }
   }
 
