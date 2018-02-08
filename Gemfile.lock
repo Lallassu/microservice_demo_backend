@@ -1,0 +1,100 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    airbrussh (1.3.0)
+      sshkit (>= 1.6.1, != 1.7.0)
+    akami (1.3.1)
+      gyoku (>= 0.4.0)
+      nokogiri
+    awesome_print (1.8.0)
+    builder (3.2.3)
+    capistrano (3.10.1)
+      airbrussh (>= 1.0.0)
+      i18n
+      rake (>= 10.0.0)
+      sshkit (>= 1.9.0)
+    capistrano-bundler (1.3.0)
+      capistrano (~> 3.1)
+      sshkit (~> 1.2)
+    capistrano-passenger (0.2.0)
+      capistrano (~> 3.0)
+    capistrano-rvm (0.1.2)
+      capistrano (~> 3.0)
+      sshkit (~> 1.2)
+    concurrent-ruby (1.0.5)
+    gyoku (1.3.1)
+      builder (>= 2.1.2)
+    hirb (0.7.3)
+    httpi (2.4.2)
+      rack
+      socksify
+    i18n (0.9.3)
+      concurrent-ruby (~> 1.0)
+    logger (1.2.8)
+    mini_portile2 (2.3.0)
+    mustermann (1.0.1)
+    mysql2 (0.4.10)
+    net-scp (1.2.1)
+      net-ssh (>= 2.6.5)
+    net-ssh (4.2.0)
+    nokogiri (1.8.2)
+      mini_portile2 (~> 2.3.0)
+    nori (2.6.0)
+    paint (2.0.1)
+    parslet (1.8.1)
+    passenger (5.2.0)
+      rack
+      rake (>= 0.8.1)
+    rack (2.0.4)
+    rack-contrib (2.0.1)
+      rack (~> 2.0)
+    rack-protection (2.0.0)
+      rack
+    rake (12.3.0)
+    savon (2.12.0)
+      akami (~> 1.2)
+      builder (>= 2.1.2)
+      gyoku (~> 1.2)
+      httpi (~> 2.3)
+      nokogiri (>= 1.8.1)
+      nori (~> 2.4)
+      wasabi (~> 3.4)
+    sinatra (2.0.0)
+      mustermann (~> 1.0)
+      rack (~> 2.0)
+      rack-protection (= 2.0.0)
+      tilt (~> 2.0)
+    socksify (1.7.1)
+    sshkit (1.16.0)
+      net-scp (>= 1.1.2)
+      net-ssh (>= 2.8.0)
+    tilt (2.0.8)
+    toml (0.2.0)
+      parslet (~> 1.8.0)
+    wasabi (3.5.0)
+      httpi (~> 2.0)
+      nokogiri (>= 1.4.2)
+    wirb (2.1.2)
+      paint (>= 0.9, < 3.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  awesome_print
+  capistrano
+  capistrano-bundler
+  capistrano-passenger
+  capistrano-rvm
+  hirb
+  logger
+  mysql2
+  passenger
+  rack-contrib
+  savon (~> 2.0)
+  sinatra
+  toml
+  wirb
+
+BUNDLED WITH
+   1.16.1
