@@ -78,10 +78,11 @@ class BadSanta
     end
 
     def servers
-        q = @db.prepare('select name, hostname, unix_timestamp()-created_ts as last_seen from servers where unix_timestamp()-created_ts < 6')
+        q = @db.prepare('select name, unix_timestamp()-created_ts as last_seen from servers where unix_timestamp()-created_ts < 6')
         res = q.execute
         servers = []
         res.each do |r|
+            r["hostname"] = "#{ENV['HOST_IP']}:6001"
             servers.push(r)
         end
         close
