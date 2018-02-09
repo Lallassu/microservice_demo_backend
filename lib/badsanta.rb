@@ -13,18 +13,23 @@ class BadSanta
     def register_server(name, hostname)
         q = @db.prepare("replace into servers set created_ts = unix_timestamp(), name = ?, hostname = ?")
         q.execute(name, hostname)
+        # Just some cleanup
+        q = @db.prepare("delete from servers where unix_timestamp()-created_ts > 60")
+        q.execute()
     end
 
     def update_db(params)
         query = "";
 
-        if params["type"] == 0 
+        if params["type"] == "0" 
             query = "update players set kills = kills + 1 where player_id = ?";
-        elsif params["type"] == 1
+        elsif params["type"] == "1"
             query = "update players set deaths = deaths + 1 where player_id = ?";
-        elsif params["type"] == 2
+        elsif params["type"] == "2"
             query = "update players set last_played_ts = unix_timestamp() where player_id = ?"; 
         end
+        ap "QUERY: #{query}"
+        ap "ID: #{params["id"]}, Type: #{params["type"]}"
         q = @db.prepare(query)
         q.execute(params["id"])
     end
