@@ -12,9 +12,8 @@ CREATE TABLE IF NOT EXISTS players(
     DEFAULT COLLATE=utf8_general_ci;
 
 CREATE TABLE IF NOT EXISTS servers( 
-    name VARCHAR(20) NOT NULL, PRIMARY KEY(hostname),
-    hostname VARCHAR(50),
-    up boolean,
+    name VARCHAR(20) NOT NULL, PRIMARY KEY(name),
+    hostname VARCHAR(50) default "test",
     created_ts INT)
     DEFAULT CHARSET=utf8,
     ENGINE=InnoDB,
