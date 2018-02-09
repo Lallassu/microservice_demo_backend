@@ -11,8 +11,8 @@ class BadSanta
     end
 
     def register_server(name, hostname)
-        q = @db.prepare("replace into servers set created_ts = unix_timestamp(), up = true, name = ?, hostname = ?")
-        q.execute(name, hostname)
+        q = @db.prepare("replace into servers set created_ts = unix_timestamp(), name = ?")
+        q.execute(name)
     end
 
     def update_db(params)
