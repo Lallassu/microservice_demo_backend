@@ -17,6 +17,9 @@ class BadSanta
 
     def update_db(params)
         query = "";
+        puts "UPDATE DB!"
+        puts params
+
         if params["type"] == 0 
             query = "update players set kills = kills + 1 where player_id = ?";
         elsif type == 1
