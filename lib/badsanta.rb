@@ -3,7 +3,6 @@ class BadSanta
         @db = Mysql2::Client.new(:host => ENV['HOST_IP'],
                                  :username => "game_", 
                                  :password => "game_",
-                                 :reconnect => true,
                                  :database => "badsanta")
     end
 
