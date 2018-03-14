@@ -1,7 +1,6 @@
 FROM ruby:latest
 ADD . /backend
 
-
 WORKDIR /backend
 RUN apt update -y && \
     apt install -y nodejs && \
